@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+<meta charset="utf-8">
+<title>实验室设备管理系统</title>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        /*background-color: #FFF2E2;*/
+        /*background-color: #ebe4d7;
+        width:100%;
+        height:100%;*/
+        background-image: url(/static/images/background1.jpg);
+        /*background-color: #ebe4d7;*/
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed; 
+        background-size: cover;
+    }
+    .top {
+        position: relative;
+        width:100%;
+        height :50px;
+        background-color:#5599FF;
+    }
+
+    .id1 {
+        position: absolute;
+        height:50px;
+        left:20px;
+        top:10px;
+        font-size: 20px;
+        color:white;
+    }
+
+    .power1 {
+        position: absolute;
+        height:50px;
+        top:10px;
+        font-size:20px;
+        left:300px;
+        color:white;
+    }
+
+    .login-button1:hover {
+        background: #1E90FF;
+    }
+
+    .login-button1{
+        top:0px;
+        position:absolute;
+        width: 120px;
+	    height: 50px;
+	    border-width: 0px;  
+	    cursor: pointer; 
+	    outline: none;
+        background-color: #5599FF;
+	    font-family: Microsoft YaHei; 
+	    color: white; 
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-left: solid white 2px;
+	    font-size: 17px;
+    }
+
+    
+    .logout{
+        float:right;
+        width:120px;
+        height:50px;
+    }
+
+    .logout2{
+        float:right;
+        width:120px;
+        height:50px;
+        right:140px;
+    }
+
+    .logout3{
+        float:right;
+        width:120px;
+        height:50px;
+        right:210px;
+    }
+
+    .logout4{
+        float:right;
+        width:120px;
+        height:50px;
+        right:280px;
+    }
+
+    .n_news{
+        float:right;
+        color:black;
+    }
+
+    .n_news1{
+        float:right;
+        color:red;
+    }
+
+    .main{
+        position:relative;
+        top:100px;
+        margin-top: 30px;
+        margin-right:50px;
+        margin:0px auto;
+        border-radius: 15px;
+        width:900px;
+        background-color: #fafbfc;
+    }
+
+    .mainshow{
+        border: 2px solid #d8d8d8;
+        width: 80%;
+        top:10px;
+        left:10%;
+        border-radius: 15px;
+        position: relative;
+        margin: 5px;
+        margin-top:15px;
+        padding: 0px;
+    }
+
+    .turn1{
+        position:absolute;
+        left:50px;
+        top:200px;
+    }
+    .turn2{
+        position:absolute;
+        left:50px;
+        top:400px;
+    }
+
+    .turn3{
+        position:absolute;
+        left:50px;
+        top:600px;
+    }
+    .sear {
+        position: relative;
+        left:470px;
+        top:90px;
+        width:560px;
+        background-color: white;
+        border-radius: 15px;
+        height:40px;
+        margin: 0px, auto;
+        padding: 0;
+    }
+    .search{
+        border:0px;
+        top:0px;
+        height:32px;
+        border-radius: 15px;
+        width:400px;
+        margin: 0px, auto;
+        padding: 0;
+    }
+
+    .show2{
+        height: 40px;
+        border-bottom:2px #d8d8d8 solid;
+        background-color: #f7f7f7;
+    }
+
+    .show3{
+        position: relative;
+        left:20px;
+        top:15%;
+        font-size: 130%;
+        float: left;
+    }
+
+    .show4{
+        position: relative;
+        width:100%;
+        left: 0;
+        padding: 0px;
+        margin: 20px;
+    }
+
+    .show41{
+        position: relative;
+        width:100%;
+        left: 0;
+        padding: 0px;
+        margin: 20px;
+    }
+
+
+    .show5 {
+        position: relative;
+        width:60px;
+        float: left;
+        top:45px;
+        text-align: center;
+    }
+    
+    .show5border{
+        position: relative;
+        width:60px;
+        height: 120px;
+        float: left;
+        left: 15px;
+    }
+
+    textarea {
+        position: relative;
+        overflow: hidden;
+        margin:5px;
+        padding: 5px;
+        border:0px;
+        text-align: left;
+        color :black;
+        font-size:15px;
+        left:5%;
+        width:70%;
+        background-color:white;
+        border-left: 1px black solid;
+    }
+
+
+    .login-button{
+        margin:0px;
+        padding:0px;
+        width: 80px;
+	    height: 43px;
+	    border-width: 0px; 
+	    border-radius: 15px; 
+	    background: #1E90FF; 
+	    cursor: pointer; 
+	    outline: none; 
+	    font-family: Microsoft YaHei; 
+	    color: white; 
+	    font-size: 17px;
+    }
+    .choose {
+        margin:0px;
+        padding:0px;
+        width: 70px;
+	    height: 35px;
+	    border-width: 0px; 
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+	    cursor: pointer; 
+	    outline: none; 
+	    font-family: Microsoft YaHei; 
+	    color: black; 
+	    font-size: 17px;
+    }
+    .unseen{
+        position:absolute;
+        user-select: none;
+        left:500px;
+        color:rgba(0,0,0,0);
+        border:0px;
+        background-color:rgba(0,0,0,0);
+    }
+
+    .in{
+        position: relative;
+        float:right;
+    }
+
+    .button_in{
+        top:0px;
+        width: 60px;
+	    height: 40px;
+	    border-width: 0px;
+        border-radius: 13px;  
+	    cursor: pointer; 
+	    outline: none;
+        background-color: #5599FF;
+	    font-family: Microsoft YaHei; 
+	    color: white; 
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-left: solid white 2px;
+	    font-size: 17px;
+    }
+    .main1{
+        position: relative;
+        top:0px;
+        left:0%;
+    }
+    .searcher3 {
+        position: relative;
+        top:300px;
+        border-radius: 15px;
+        margin: auto;
+        width: 300px;
+        height: 17px;
+    }
+    .main2 {
+        position: relative;
+        top:0;
+        left:0%;
+    }
+
+</style>
+</head>
+
+<body>
+    <div class = "top">
+        <div class = id1>用户名：{{usr_name}}</div>
+        <div class = power1>身份：{{power}}</div>
+        <form action = "/Login_Out" method = "get" class = "logout">
+            <input class="login-button1" type = "submit" value = "登出">
+        </form>
+        {% ifequal power "管理员" %}
+        <form action="/i_project" method = "get" class = "logout3">
+            <input class = "login-button1" type = "submit" value = "购置设备">
+        </form>
+        {% endifequal %}
+        
+    </div>
+
+    <form action = "/search" method = "get" class = "sear">
+        <input autocomplete="off" type = "text" name = "contents" class = "search">
+        <select class = "choose" name = "identify">
+                <option value ="name">设备名</option>
+                <option value ="id">id</option>
+              </select> 
+        <input class="login-button" type = "submit" value = "搜索">
+    </form>
+
+
+    <div class = main>
+            <div class = "main1">
+                {% for item in item_list %}
+                    <div class = mainshow>
+                        <div class = show2>
+                            <a class = show3 :href="item.url">设备名:{{ item.goods_name }}</a> 
+                            <form action = "/to_appointment" method = "get" class = "in">
+                                <input type = "text", name = "stick_id", value={{item.stick_id}} class = "unseen">
+                                <input type = "submit" value = "预约", class = "button_in">
+                            </form>
+                        </div>
+                        <div class = show2>
+                            <a class = show3 :href="item.url">设备id:{{ item.stick_id }}</a> 
+                        </div>
+                        <div class = show2>
+                            <a class = show3 :href="item.url">购入时间:{{ item.stick_name }}</a> 
+                        </div>
+                        <div class = show2>
+                            <a class = show3 :href="item.url">购买人:{{ item.buy_name }}</a> 
+                        </div>
+                        <div class = show2>
+                            <a class = show3 :href="item.url">所属实验室:{{ item.lab }}</a> 
+                        </div>
+                    </div>
+                    <div class = "searcher3"></div>
+                    {% endfor %}
+            </div>    
+            <div class = main2>
+                {% for item in item_listb %}
+                <div class = mainshow>
+                        <div class = show2>
+                            <a class = show3 :href="item.url">项目名:{{ item.project_name }}</a>
+                            <form action = "/to_project_stick" method = "get" class = "in">
+                                <input type = "text", name = "stick_id", value={{item.stick_id}} , class = "unseen">
+                                <input type = "submit" value = "进入" class = "button_in">
+                            </form> 
+                        </div>
+                        <div class = show4>
+                            <div class = show5border> 
+                                <div class = show5>贴主题</div>
+                            </div>
+                            <textarea readonly = "readonly" class = "T" cols="15" rows="5">{{item.stick_name}}</textarea>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            
+    </div>
+</body>
+</html>
+
+<div v-html = "item.data.code"></div>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+<meta charset="utf-8">
+<title>实验室设备管理系统</title>
+<style>
+    body{
+        /*margin: 0;
+        padding: 0;*./
+        /*background-color: #FFF2E2;*/
+        /*background-color: #ebe4d7;
+        width:100%;
+        height:100%;*/
+        background-image: url(/static/images/background1.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed; 
+        background-size: cover;
+        background-color: #CCCCCC;
+    }
+
+    input {
+        height:30px;
+         width:400px;
+         background: none;
+         font-size: 20px;
+         outline: none;
+         border-style: none;
+     }
+
+    #app {
+        position: relative;
+    }
+
+    #centershow{
+        border:3px, red, solid;
+    }
+
+    #page2 {
+        position: absolute;
+        top:220px;
+        left: 5%;
+        background-color: white;
+        border-radius: 20px;
+        width:90%;
+    }
+
+    #inputsentence{
+        position:relative;
+        margin: 5px;
+        padding: 5px;
+        border:0px;
+        text-align: center;
+        width:80%;
+        left:5%;
+    }
+
+    textarea:focus{outline: none;}
+
+    .searcher3 {
+        position: relative;
+        top:300px;
+        border-radius: 15px;
+        margin: auto;
+        width: 300px;
+        height: 17px;
+    }
+
+    .searcher4 {
+        position: relative;
+        top:250px;
+        border-radius: 15px;
+        margin: auto;
+        width: 300px;
+        height: 1px;
+    }
+
+    .searcher2 {
+        position: relative;
+        top:60px;
+        background: #fafbfc;
+        border-radius: 4px;
+        margin: auto;
+        width: 300px;
+        height: 37px;
+        border:solid 1px;
+    }
+
+     .innerexplain{
+         color:white;
+     }
+
+    .login-button{
+        top:100px;
+        left:50px;
+        position: relative;
+        width: 300px;
+	    height: 43px;
+	    border-width: 0px; 
+	    border-radius: 15px; 
+	    background: #1E90FF; 
+	    cursor: pointer; 
+	    outline: none; 
+	    font-family: Microsoft YaHei; 
+	    color: white; 
+	    font-size: 17px;
+    }
+
+
+    .login-button:hover {
+        background: #5599FF;
+    }
+
+    .login-button1{
+        top:px;
+        left:px;
+        position:absolute;
+        width: 120px;
+	    height: 50px;
+	    border-width: 0px; 
+        border-top-left-radius: 15px;
+	    background: #d3d3d3; 
+	    cursor: pointer; 
+	    outline: none;
+	    font-family: Microsoft YaHei; 
+	    color: white; 
+        border-right: solid black 1px;
+	    font-size: 17px;
+    }
+
+
+    .login-button1:hover {
+        background: #5599FF;
+    }
+
+    .login_border{
+        position:relative;
+        border-radius: 15px;
+        background-color:#ebe4d7;
+        top:130px;
+        height: 460px;
+        width:600px;
+        margin:auto;
+        border:solid 1px;
+    }
+
+    .register_top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        height:50px;
+        width:600px;
+        background-color: #d3d3d3;
+        text-align: center;
+        font-family: Microsoft YaHei; 
+	    font-size: 35px;
+        
+    }
+
+    .introdution {
+        position: relative;
+        top: 380px;      
+        left: 400px;
+
+    }
+    .article {
+        position: relative;
+        left:50px;
+        font-size: 25px;
+    }
+    .choose {
+        border-radius: 10px;
+        position: relative;
+        top:45px;
+        left:350px;
+        height:45px;
+        width:100px;
+        font-size: 20px;
+    }
+    .chooseleft{
+        position: relative;
+        top:80px;
+        left:130px;
+        font-size:20px;
+    }
+
+</style>
+</head>
+<body>
+    <div id="app" >
+        <div>    
+                <div class = "login_border">
+                        <form action = "/Return_Login" method = "get">
+                            <input class="login-button1" type = "submit" value = "返回登录">
+                        </form>
+                <div class = "register_top">Welcom to join us</div>
+                    <form action = "/register" method = "get">
+                        <div class = "searcher2">
+                                <input type = "text" autocomplete="off" name = "usr_name" left = "0" id = "iput" v-model = "type" type="border-radius:10px;" placeholder="请输入姓名" @keyup.enter="willshow = !willshow, counter = !counter">
+                        </div>
+                        <div class = "searcher3"></div>
+                        <div class = "searcher2">
+                            <input type = "password" autocomplete="off" name = "usr_password" left = "0" id = "iput" v-model = "message" type="border-radius:10px;" placeholder="请输入密码" @keyup.enter="willshow = !willshow, counter = !counter">
+                        </div>
+                        <div class = "searcher3"></div>
+                        <div class = "searcher2">
+                            <input type = "password" autocomplete="off" name = "usr_password_Again" left = "0" id = "iput" v-model = "message" type="border-radius:10px;" placeholder="请再次确认密码" @keyup.enter="willshow = !willshow, counter = !counter">
+                        </div>
+                        <div class = "searcher4"></div>
+                        <div class = "chooseleft"> 请选择注册身份</div>
+                        <select class = "choose" name = "power">
+                                <option value =1>管理员</option>
+                                <option value =0>用户</option>
+                        </select>
+                        <div class = "searcher4"></div>
+                        <div class = "chooseleft"> 请选择实验室</div>
+                        <select class = "choose" name = "laboratory">
+                            <option value = "计算机实验室">计算机实验室</option>
+                            <option value = "物理实验室">物理实验室</option>
+                            <option value = "化学实验室">化学实验室</option>
+                            <option value = "生物实验室">生物实验室</option>
+                            <option value = "电子实验室">电子实验室</option>
+                        </select>
+                        <input class="login-button" type = "submit" value = "注册">
+                    </form>
+                </div>            
+        </div>
+            
+    </div>
+    
+
+</body>
+</html>
+
+<div v-html = "item.data.code"></div>

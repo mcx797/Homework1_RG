@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+<meta charset="utf-8">
+<title>实验室设备管理系统</title>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        /*background-color: #FFF2E2;*/
+        /*background-color: #ebe4d7;
+        width:100%;
+        height:100%;*/
+        background-image: url(/static/images/background1.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed; 
+        background-size: cover;
+    }
+    .top {
+        position: relative;
+        width:100%;
+        height :50px;
+        background-color:#5599FF;
+    }
+
+    .id1 {
+        position: absolute;
+        height:50px;
+        left:20px;
+        top:10px;
+        font-size: 20px;
+        color:white;
+    }
+
+    .power1 {
+        position: absolute;
+        height:50px;
+        top:10px;
+        font-size:20px;
+        left:300px;
+        color:white;
+    }
+
+    .logout2{
+        float:right;
+        width:120px;
+        height:50px;
+        right:140px;
+    }
+
+    .login-buttonn{
+        top:80px;
+        left:150px;
+        position: relative;
+        left:230px;
+        width: 130px;
+	    height: 43px;
+	    border-width: 0px; 
+	    border-radius: 15px; 
+	    background: #1E90FF; 
+	    cursor: pointer; 
+	    outline: none; 
+	    font-family: Microsoft YaHei; 
+	    color: white; 
+	    font-size: 17px;
+    }
+
+
+    .login-button{
+        top:100px;
+        left:150px;
+        position: relative;
+        width: 300px;
+	    height: 43px;
+	    border-width: 0px; 
+	    border-radius: 15px; 
+	    background: #1E90FF; 
+	    cursor: pointer; 
+	    outline: none; 
+	    font-family: Microsoft YaHei; 
+	    color: white; 
+	    font-size: 17px;
+    }
+    .login-button1:hover {
+        background: #1E90FF;
+    }
+
+    .login-button1{
+        top:0px;
+        position:absolute;
+        width: 120px;
+	    height: 50px;
+	    border-width: 0px;  
+	    cursor: pointer; 
+	    outline: none;
+        background-color: #5599FF;
+	    font-family: Microsoft YaHei; 
+	    color: white; 
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-left: solid white 2px;
+	    font-size: 17px;
+    }
+    .logout{
+        float:right;
+        width:120px;
+        height:50px;
+    }
+
+    .main{
+        position:relative;
+        float:right;
+        top:50px;
+        margin-top: 20px;
+        margin-right:50px;
+        border-radius: 15px;
+        width:900px;
+        background-color: #fafbfc;
+    }
+
+    .searcher3 {
+        position: relative;
+        top:300px;
+        border-radius: 15px;
+        margin: auto;
+        width: 300px;
+        height: 17px;
+    }
+
+    .turn1{
+        position:absolute;
+        left:50px;
+        top:200px;
+    }
+    .turn2{
+        position:absolute;
+        left:50px;
+        top:400px;
+    }
+
+    .turn3{
+        position:absolute;
+        left:50px;
+        top:600px;
+    }
+    .sear {
+        position:absolute;
+        left:600px;
+        top:90px;
+        width:560px;
+        background-color: white;
+        border-radius: 15px;
+        height:40px;
+        margin: 0;
+        padding: 0;
+    }
+    .search{
+        border:0px;
+        top:0px;
+        height:32px;
+        border-radius: 15px;
+        width:400px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .login-button{
+        margin:0px;
+        padding:0px;
+        width: 80px;
+	    height: 43px;
+	    border-width: 0px; 
+	    border-radius: 15px; 
+	    background: #1E90FF; 
+	    cursor: pointer; 
+	    outline: none; 
+	    font-family: Microsoft YaHei; 
+	    color: white; 
+	    font-size: 17px;
+    }
+    .choose {
+        margin:0px;
+        padding:0px;
+        width: 200px;
+	    height: 35px;
+	    border-width: 0px; 
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+	    cursor: pointer; 
+	    outline: none; 
+	    font-family: Microsoft YaHei; 
+	    color: black; 
+	    font-size: 17px;
+    }
+
+    input {
+        height:30px;
+         width:400px;
+         background: none;
+         font-size: 20px;
+         outline: none;
+         border-style: none;
+     }
+
+    .login_border{
+        border-radius: 15px;
+        top:180px;
+        position: relative;
+        height: 430px;
+        width:600px;
+        left:400px;
+        border:solid 1px;
+        background-color:#ebe4d7;
+    }
+    .register_top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        height:50px;
+        width:600px;
+        background-color: #d3d3d3;
+        text-align: center;
+        font-family: Microsoft YaHei; 
+	    font-size: 35px;
+        
+    }
+    .searcher2 {
+        position: relative;
+        top:60px;
+        background: #fafbfc;
+        border-radius: 4px;
+        margin: auto;
+        width: 300px;
+        height: 37px;
+        border:solid 1px;
+    }
+
+    .choose {
+        border-radius: 10px;
+        position: relative;
+        top:45px;
+        left:350px;
+        height:45px;
+        width:100px;
+        font-size: 20px;
+    }
+
+    .chooseleft{
+        position: relative;
+        top:80px;
+        left:130px;
+        font-size:20px;
+    }
+
+    .logout3{
+        float:right;
+        width:120px;
+        height:50px;
+        right:210px;
+    }
+
+    .logout4{
+        float:right;
+        width:120px;
+        height:50px;
+        right:280px;
+    }
+
+    .n_news{
+        float:right;
+        color:black;
+    }
+
+    .n_news1{
+        float:right;
+        color:red;
+    }
+
+</style>
+</head>
+
+<body>
+    <div class = "top">
+        <div class = id1>用户名：{{usr_name}}</div>
+        <div class = power1>身份：{{power}}</div>
+        <form action = "/Login_Out" method = "get" class = "logout">
+            <input class="login-button1" type = "submit" value = "登出">
+        </form>
+        <form action="/back" method = "get" class = "logout3">
+            <input class = "login-button1" type = "submit" value = "回到主页">
+        </form>
+    </div>
+    <div class = "login_border">
+    <div class = "register_top">请输入购置设备的信息</div>
+        <form action = "/project" method = "get">
+            <div class = "searcher2">
+                    <input type = "text" autocomplete="off" name = "project_name" left = "0" id = "iput" v-model = "type" type="border-radius:10px;" placeholder="请输入设备名称" @keyup.enter="willshow = !willshow, counter = !counter">
+            </div>
+            
+            
+            <div class = "searcher2">
+                <input type = "text" autocomplete="off" name = "usr_name" left = "0" id = "iput" v-model = "message" type="border-radius:10px;" placeholder="请输入购置人姓名" @keyup.enter="willshow = !willshow, counter = !counter">
+            </div>
+            <div class = "searcher3"></div>
+                        <div class = "chooseleft"> 请选择实验室</div>
+                        <select class = "choose" name = "laboratory">
+                            <option value ="计算机实验室">计算机实验室</option>
+                            <option value ="物理实验室">物理实验室</option>
+                            <option value ="化学实验室">化学实验室</option>
+                            <option value ="生物实验室">生物实验室</option>
+                            <option value ="电子实验室">电子实验室</option>
+                        </select>
+            <div class = "searcher3"></div>
+            <input class="login-buttonn" type = "submit" value = "添加">
+        </form>
+    </div>
+</body>
+</html>
+
+<div v-html = "item.data.code"></div>
